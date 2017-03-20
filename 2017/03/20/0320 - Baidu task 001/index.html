@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="使用两台电脑进行部署，能不能同时提交">
+<meta name="description" content="初步了解JavaScript的事件是什么，初步了解JavaScript中的DOM是什么">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小米电脑提交测试319">
-<meta property="og:url" content="http://yoursite.com/2017/03/19/319/index.html">
+<meta property="og:title" content="Baidu IFE Task 001 - 小功能">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/0320 - Baidu task 001/index.html">
 <meta property="og:site_name" content="Very">
-<meta property="og:description" content="使用两台电脑进行部署，能不能同时提交">
-<meta property="og:updated_time" content="2017-03-19T14:07:38.811Z">
+<meta property="og:description" content="初步了解JavaScript的事件是什么，初步了解JavaScript中的DOM是什么">
+<meta property="og:updated_time" content="2017-03-20T12:49:17.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小米电脑提交测试319">
-<meta name="twitter:description" content="使用两台电脑进行部署，能不能同时提交">
+<meta name="twitter:title" content="Baidu IFE Task 001 - 小功能">
+<meta name="twitter:description" content="初步了解JavaScript的事件是什么，初步了解JavaScript中的DOM是什么">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/19/319/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/20/0320 - Baidu task 001/"/>
 
 
 
 
 
-  <title> 小米电脑提交测试319 | Very </title>
+  <title> Baidu IFE Task 001 - 小功能 | Very </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/319/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/0320 - Baidu task 001/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="周打杂">
@@ -283,7 +283,7 @@
             
             
               
-                小米电脑提交测试319
+                Baidu IFE Task 001 - 小功能
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T22:05:46+08:00">
-                2017-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T20:46:00+08:00">
+                2017-03-20
               </time>
             
 
@@ -309,6 +309,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -321,6 +343,10 @@
 
           
 
+          
+              <div class="post-description">
+                  初步了解JavaScript的事件是什么，初步了解JavaScript中的DOM是什么
+              </div>
           
 
         </div>
@@ -335,8 +361,23 @@
 
       
         <blockquote>
-<p>使用两台电脑进行部署，能不能同时提交</p>
+<p><a href="http://ife.baidu.com/course/detail/id/93" target="_blank" rel="external">任务一：零基础JavaScript编码（一）</a></p>
 </blockquote>
+<h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><ul>
+<li>参考以下示例代码，补充其中的JavaScript功能，完成一个JavaScript代码的编写</li>
+<li>本任务完成的功能为：用户可以在输入框中输入任何内容，点击“确认填写”按钮后，用户输入的内容会显示在“您输入的值是”文字的右边</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>请输入北京今天空气质量：<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"aqi-input"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>确认填写<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>您输入的值是：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"aqi-display"</span>&gt;</span>尚无录入<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">/*</span></div><div class="line">  在注释下方写下代码</div><div class="line">  给按钮button绑定一个点击事件</div><div class="line">  在事件处理函数中</div><div class="line">  获取aqi-input输入的值，并显示在aqi-display中</div><div class="line">  */</div><div class="line"></div><div class="line">  <span class="comment">// 获取id的函数</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 显示结果函数</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">renderResult</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">    $(<span class="string">'aqi-display'</span>).innerHTML = $(<span class="string">'aqi-input'</span>).value;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 给按钮绑定点击事件</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">initEvent</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'button'</span>).addEventListener(<span class="string">'click'</span>,renderResult,<span class="literal">false</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// 执行函数</span></div><div class="line">  initEvent();</div><div class="line">  </div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://xinchou16.github.io/2017-Baidu-IFE-Task/Task%20001.html" target="_blank" rel="external">效果预览</a></p>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>JavaScript初体验</li>
+<li>初步明白JavaScript的简单基本语法，如变量、函数</li>
+<li>初步了解JavaScript的事件是什么</li>
+<li>初步了解JavaScript中的DOM是什么</li>
+</ul>
 
       
     </div>
@@ -367,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/13/0313 - 构建node.js应用模块/" rel="next" title="构建node.js应用模块">
-                <i class="fa fa-chevron-left"></i> 构建node.js应用模块
+              <a href="/2017/03/19/319/" rel="next" title="小米电脑提交测试319">
+                <i class="fa fa-chevron-left"></i> 小米电脑提交测试319
               </a>
             
           </div>
@@ -376,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/20/0320 - Baidu task 001/" rel="prev" title="Baidu IFE Task 001 - 小功能">
-                Baidu IFE Task 001 - 小功能 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -426,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/me.jpg"
@@ -478,6 +524,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#任务描述"><span class="nav-number">1.</span> <span class="nav-text">任务描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
