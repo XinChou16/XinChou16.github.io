@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="带你体验Mootools源码中强大的数组API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mootools源码之数组">
+<meta property="og:url" content="http://weibo.com/6054819369/2017/05/14/0514 - mootools源码之数组/index.html">
+<meta property="og:site_name" content="Very">
+<meta property="og:description" content="带你体验Mootools源码中强大的数组API">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4258693-1e3113f12ece2bf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-05-14T01:03:52.887Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mootools源码之数组">
+<meta name="twitter:description" content="带你体验Mootools源码中强大的数组API">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4258693-1e3113f12ece2bf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://weibo.com/6054819369/2017/05/14/0514 - mootools源码之数组/"/>
+
+
+
+
+
+  <title> Mootools源码之数组 | Very </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人言聚有时散有期</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://weibo.com/6054819369/2017/05/14/0514 - mootools源码之数组/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="周打杂">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/me.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Very">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Very" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mootools源码之数组
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T08:58:02+08:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mootools/" itemprop="url" rel="index">
+                    <span itemprop="name">mootools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  带你体验Mootools源码中强大的数组API
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Mootoolso拓展了许多Array API，除掉原生的方法外，还没添加了近20个方法，这让我们在处理数组的时候，所向披靡，现在从源码入手，分析那些强大的拓展方法</p>
+</blockquote>
+<h1 id="！ES5，在不支持ES5的浏览器实现ES5的方法"><a href="#！ES5，在不支持ES5的浏览器实现ES5的方法" class="headerlink" title="！ES5，在不支持ES5的浏览器实现ES5的方法"></a>！ES5，在不支持ES5的浏览器实现ES5的方法</h1><h3 id="Array-every-判断数组每项是否满足所给条件的方法"><a href="#Array-every-判断数组每项是否满足所给条件的方法" class="headerlink" title="Array.every 判断数组每项是否满足所给条件的方法"></a>Array.every 判断数组每项是否满足所给条件的方法</h3><p><img src="http://upload-images.jianshu.io/upload_images/4258693-1e3113f12ece2bf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.every.png"></p>
+<h3 id="Array-filter-根据条件过滤数组"><a href="#Array-filter-根据条件过滤数组" class="headerlink" title="Array.filter 根据条件过滤数组"></a>Array.filter 根据条件过滤数组</h3><h3 id="Array-indexOf-返回对象在数组中的位置"><a href="#Array-indexOf-返回对象在数组中的位置" class="headerlink" title="Array.indexOf 返回对象在数组中的位置"></a>Array.indexOf 返回对象在数组中的位置</h3><blockquote>
+<p>语法见官网，这里说下思路，L36-42</p>
+</blockquote>
+<ol>
+<li>这里的判断很精妙，核心是使用for循环，判断每项是否与要查找的项相等，相等就 返回对应的索引i的值，默认返回-1</li>
+<li>循环迭代i的值进行了多重判断，核心使用三元操作符，如果没有传入则为0，传入,整个是与0 做或判断，如果传入则对正负判断</li>
+<li>注意this绑定了当前数组对象<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = (<span class="keyword">from</span> &lt; <span class="number">0</span>) ? <span class="built_in">Math</span>.max(<span class="number">0</span>, length + <span class="keyword">from</span>) : <span class="keyword">from</span> || <span class="number">0</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Array-map-方法遍历过所有数组对象后生成的结果返回一个新的数组"><a href="#Array-map-方法遍历过所有数组对象后生成的结果返回一个新的数组" class="headerlink" title="Array.map 方法遍历过所有数组对象后生成的结果返回一个新的数组"></a>Array.map 方法遍历过所有数组对象后生成的结果返回一个新的数组</h3><h3 id="Array-some-判断数组是否有对象满足条件，返回布尔值"><a href="#Array-some-判断数组是否有对象满足条件，返回布尔值" class="headerlink" title="Array.some 判断数组是否有对象满足条件，返回布尔值"></a>Array.some 判断数组是否有对象满足条件，返回布尔值</h3><h1 id="原生拓展"><a href="#原生拓展" class="headerlink" title="原生拓展"></a>原生拓展</h1><h3 id="Array-clean-清理非数组对象，生成一个纯数组对象"><a href="#Array-clean-清理非数组对象，生成一个纯数组对象" class="headerlink" title="Array.clean 清理非数组对象，生成一个纯数组对象"></a>Array.clean 清理非数组对象，生成一个纯数组对象</h3><ol>
+<li>调用filter方法，返回非数组对象</li>
+<li>没有完全理解，后面补上</li>
+</ol>
+<h3 id="Array-invoke-将方法一一作用到数组上，并返回"><a href="#Array-invoke-将方法一一作用到数组上，并返回" class="headerlink" title="Array.invoke 将方法一一作用到数组上，并返回"></a>Array.invoke 将方法一一作用到数组上，并返回</h3><h3 id="Array-associate-两数组关联为JSON对象"><a href="#Array-associate-两数组关联为JSON对象" class="headerlink" title="Array.associate 两数组关联为JSON对象"></a>Array.associate 两数组关联为JSON对象</h3><ol>
+<li>参数：myArray.associate(key；</li>
+<li>新建对象，当对象和属性长度不一致时，取最短的那个长度</li>
+<li>传入的参数为key，绑定的当前数组为value</li>
+<li>返回：这个对象</li>
+</ol>
+<h3 id="Array-link-根据条件进行关联"><a href="#Array-link-根据条件进行关联" class="headerlink" title="Array.link 根据条件进行关联"></a>Array.link 根据条件进行关联</h3><h3 id="Array-contains-判断是否有对象，返回布尔值"><a href="#Array-contains-判断是否有对象，返回布尔值" class="headerlink" title="Array.contains 判断是否有对象，返回布尔值"></a>Array.contains 判断是否有对象，返回布尔值</h3><ol>
+<li>参数： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">2. 调用indexOf方法，</div><div class="line">3. 返回：布尔值, -1</div><div class="line"></div><div class="line">### Array.append 追加对象在最后</div><div class="line"></div><div class="line">1. 绑定当前对象</div><div class="line">2. 返回：添加新项后的对象</div><div class="line">``` javascript</div><div class="line">		this.push.apply(this, array);</div></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Array-getLast-取到数组最后的对象"><a href="#Array-getLast-取到数组最后的对象" class="headerlink" title="Array.getLast 取到数组最后的对象"></a>Array.getLast 取到数组最后的对象</h3><ol>
+<li>先判断长度是否不为0</li>
+<li>然后返回最后一项</li>
+</ol>
+<h3 id="Array-getRandom-取到数组中任一对象"><a href="#Array-getRandom-取到数组中任一对象" class="headerlink" title="Array.getRandom 取到数组中任一对象"></a>Array.getRandom 取到数组中任一对象</h3><ol>
+<li>先判断长度是否不为0</li>
+<li>然后调用number的生成随机数方法，返回一个随机索引，即可返回一个随机值</li>
+</ol>
+<h3 id="Array-include-高级追加，如果重复则不会重复追加"><a href="#Array-include-高级追加，如果重复则不会重复追加" class="headerlink" title="Array.include 高级追加，如果重复则不会重复追加"></a>Array.include 高级追加，如果重复则不会重复追加</h3><ol>
+<li>调用contains方法，重复则不添加</li>
+<li>参数：item</li>
+<li>返回：当前对象</li>
+</ol>
+<h3 id="Array-combine-结合两个数组为一个数组"><a href="#Array-combine-结合两个数组为一个数组" class="headerlink" title="Array.combine 结合两个数组为一个数组"></a>Array.combine 结合两个数组为一个数组</h3><ol>
+<li>调用include方法，循环迭代</li>
+<li>参数：array</li>
+<li>返回：当前对象</li>
+</ol>
+<h3 id="Array-erase-从数组中清除对象"><a href="#Array-erase-从数组中清除对象" class="headerlink" title="Array.erase 从数组中清除对象"></a>Array.erase 从数组中清除对象</h3><ol>
+<li>调用splice方法，从右到左迭代，item为所需要清除的对象</li>
+<li>参数：item</li>
+<li>返回：当前对象</li>
+</ol>
+<h3 id="Array-empty-清空数组对象"><a href="#Array-empty-清空数组对象" class="headerlink" title="Array.empty 清空数组对象"></a>Array.empty 清空数组对象</h3><ol>
+<li>将Length属性赋值为0</li>
+<li>参数：null</li>
+<li>返回：当前对象</li>
+</ol>
+<h3 id="Array-flatten-将多维数组或混型数组转为普通数组"><a href="#Array-flatten-将多维数组或混型数组转为普通数组" class="headerlink" title="Array.flatten 将多维数组或混型数组转为普通数组"></a>Array.flatten 将多维数组或混型数组转为普通数组</h3><h3 id="Array-pick-挑选出数组中第一个有效的对象"><a href="#Array-pick-挑选出数组中第一个有效的对象" class="headerlink" title="Array.pick 挑选出数组中第一个有效的对象"></a>Array.pick 挑选出数组中第一个有效的对象</h3><ol>
+<li>循环，判断，返回</li>
+<li>参数：null</li>
+<li>返回：不为空的对象</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/20/0320 - Baidu task 001/" rel="next" title="Baidu IFE Task 001 - 小功能">
+                <i class="fa fa-chevron-left"></i> Baidu IFE Task 001 - 小功能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="周打杂" />
+          <p class="site-author-name" itemprop="name">周打杂</p>
+           
+              <p class="site-description motion-element" itemprop="description">不一样的烟火</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#！ES5，在不支持ES5的浏览器实现ES5的方法"><span class="nav-number">1.</span> <span class="nav-text">！ES5，在不支持ES5的浏览器实现ES5的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-every-判断数组每项是否满足所给条件的方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">Array.every 判断数组每项是否满足所给条件的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-filter-根据条件过滤数组"><span class="nav-number">1.0.2.</span> <span class="nav-text">Array.filter 根据条件过滤数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-indexOf-返回对象在数组中的位置"><span class="nav-number">1.0.3.</span> <span class="nav-text">Array.indexOf 返回对象在数组中的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-map-方法遍历过所有数组对象后生成的结果返回一个新的数组"><span class="nav-number">1.0.4.</span> <span class="nav-text">Array.map 方法遍历过所有数组对象后生成的结果返回一个新的数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-some-判断数组是否有对象满足条件，返回布尔值"><span class="nav-number">1.0.5.</span> <span class="nav-text">Array.some 判断数组是否有对象满足条件，返回布尔值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原生拓展"><span class="nav-number">2.</span> <span class="nav-text">原生拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-clean-清理非数组对象，生成一个纯数组对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">Array.clean 清理非数组对象，生成一个纯数组对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-invoke-将方法一一作用到数组上，并返回"><span class="nav-number">2.0.2.</span> <span class="nav-text">Array.invoke 将方法一一作用到数组上，并返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-associate-两数组关联为JSON对象"><span class="nav-number">2.0.3.</span> <span class="nav-text">Array.associate 两数组关联为JSON对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-link-根据条件进行关联"><span class="nav-number">2.0.4.</span> <span class="nav-text">Array.link 根据条件进行关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-contains-判断是否有对象，返回布尔值"><span class="nav-number">2.0.5.</span> <span class="nav-text">Array.contains 判断是否有对象，返回布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-getLast-取到数组最后的对象"><span class="nav-number">2.0.6.</span> <span class="nav-text">Array.getLast 取到数组最后的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-getRandom-取到数组中任一对象"><span class="nav-number">2.0.7.</span> <span class="nav-text">Array.getRandom 取到数组中任一对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-include-高级追加，如果重复则不会重复追加"><span class="nav-number">2.0.8.</span> <span class="nav-text">Array.include 高级追加，如果重复则不会重复追加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-combine-结合两个数组为一个数组"><span class="nav-number">2.0.9.</span> <span class="nav-text">Array.combine 结合两个数组为一个数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-erase-从数组中清除对象"><span class="nav-number">2.0.10.</span> <span class="nav-text">Array.erase 从数组中清除对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-empty-清空数组对象"><span class="nav-number">2.0.11.</span> <span class="nav-text">Array.empty 清空数组对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-flatten-将多维数组或混型数组转为普通数组"><span class="nav-number">2.0.12.</span> <span class="nav-text">Array.flatten 将多维数组或混型数组转为普通数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-pick-挑选出数组中第一个有效的对象"><span class="nav-number">2.0.13.</span> <span class="nav-text">Array.pick 挑选出数组中第一个有效的对象</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">周打杂</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
