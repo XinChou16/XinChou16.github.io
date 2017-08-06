@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="node小爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用node爬虫，爬取指定排名网站的JS引用库">
+<meta property="og:url" content="http://weibo.com/6054819369/2017/08/06/0806 - node实现的爬虫/index.html">
+<meta property="og:site_name" content="Very">
+<meta property="og:description" content="node小爬虫">
+<meta property="og:updated_time" content="2017-08-06T01:05:24.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用node爬虫，爬取指定排名网站的JS引用库">
+<meta name="twitter:description" content="node小爬虫">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://weibo.com/6054819369/2017/08/06/0806 - node实现的爬虫/"/>
+
+
+
+
+
+  <title> 使用node爬虫，爬取指定排名网站的JS引用库 | Very </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Very</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人言聚有时散有期</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://weibo.com/6054819369/2017/08/06/0806 - node实现的爬虫/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="周打杂">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/me.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Very">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Very" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用node爬虫，爬取指定排名网站的JS引用库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T08:58:02+08:00">
+                2017-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  node小爬虫
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>本爬虫将从网站爬取排名前几的网站，具体前几名可以具体设置，并分别爬取他们的主页，检查是否引用特定库。</p>
+<p><a href="https://github.com/XinChou16/web-crawl" target="_blank" rel="external">github地址</a><br><a href="https://segmentfault.com/a/1190000010328368" target="_blank" rel="external">segmentFault</a></p>
+<p>所用到的node主要模块</p>
+<ul>
+<li>express 不用多说</li>
+<li>request http模块</li>
+<li>cheerio 运行在服务器端的jQuery</li>
+<li>node-inspector node调试模块</li>
+<li>node-dev 修改文件后自动重启app</li>
+</ul>
+<h2 id="关于调试Node"><a href="#关于调试Node" class="headerlink" title="关于调试Node"></a>关于调试Node</h2><p>在任意一个文件夹，执行<code>node-inspector</code>，通过打开特定页面，在页面上进行调试，然后运行app，使用<code>node-dev app.js</code>来自动重启应用。</p>
+<h2 id="所碰到的问题"><a href="#所碰到的问题" class="headerlink" title="所碰到的问题"></a>所碰到的问题</h2><h3 id="1-request请求多个页面"><a href="#1-request请求多个页面" class="headerlink" title="1. request请求多个页面"></a>1. request请求多个页面</h3><ol>
+<li>由于请求是异步执行的，和分别返回3个页面的数据，这里只爬取了50个网站，一个页面有20个，所以有3页，通过循环里套request请求，来实现。</li>
+<li>通过添加请求头可以实现基本的反爬虫</li>
+<li>处理数据的方法都写在<code>analyData()</code>里面，造成后面的数据重复存储了，想了很久，才想到一个解决方法，后面会写到是怎么解决的。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">for (var i = 1; i &lt; len+1; i++) &#123;</div><div class="line">    (function(i)&#123;</div><div class="line">      var options = &#123;</div><div class="line">        url: &apos;http://www.alexa.cn/siterank/&apos; + i,</div><div class="line">        headers: &#123;</div><div class="line">          &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36&apos;</div><div class="line">        &#125;</div><div class="line">      &#125;;</div><div class="line">      request(options, function (err, response, body) &#123;</div><div class="line">          analyData(body,rank);</div><div class="line">      &#125;)</div><div class="line">    &#125;)(i)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="2-多层回调"><a href="#2-多层回调" class="headerlink" title="2. 多层回调"></a>2. 多层回调</h3><p>仔细观察代码，你会发现，处理数据的方法使用了如下的多层回调，也可以不使用回调，写在一个函数内部；因为，每层都要使用上一层的数据，造成了这样的写法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function f1(data1)&#123;</div><div class="line">    f2(data1);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function f2(data2)&#123;</div><div class="line">    f3(data2);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">function f3(data3)&#123;</div><div class="line">    f4(data4);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-正则获取JS库"><a href="#3-正则获取JS库" class="headerlink" title="3. 正则获取JS库"></a>3. 正则获取JS库</h3><p>由于获取页面库，首先需要获取到script的src属性，然后通过正则来实现字符串匹配。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>获取到的script可能是上面这样的，由于库名的命名真是各种各样，后来想了一下，因为文件名是用.js结尾的，所以就以点号为结尾，然后把点号之前的字符截取下来，这样获得了库名，代码如下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var reg = /[^\/\\]+$/g;</div><div class="line">var libName = jsLink.match(reg).join(&apos;&apos;);</div><div class="line">var libFilter = libName.slice(0,libName.indexOf(&apos;.&apos;));</div></pre></td></tr></table></figure></p>
+<h3 id="4-cheerio模块获取JS引用链接"><a href="#4-cheerio模块获取JS引用链接" class="headerlink" title="4.cheerio模块获取JS引用链接"></a>4.cheerio模块获取JS引用链接</h3><p>这部分也花了一点时间，才搞定，cheerio获取DOM的方法和jQuery是一样的，需要对返回的DOM对象进行查看，就可以看到对象里隐藏好深的href属性，方法大同小异，你也可以使用其他选择器，选择到script标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var $ = cheerio.load(body);</div><div class="line">var scriptFile = $(&apos;script&apos;).toArray();</div><div class="line"></div><div class="line"></div><div class="line">scriptFile.forEach(function(item,index)&#123;</div><div class="line">    if (item.attribs.src != null) &#123;</div><div class="line">      obtainLibName(item.attribs.src,index);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5-存储数据到数据库"><a href="#5-存储数据到数据库" class="headerlink" title="5.存储数据到数据库"></a>5.存储数据到数据库</h3><p>存储数据的逻辑是先获取所有的<code>script</code>信息，然后push到一个缓存数组，由于push后面，紧跟着存储到数据库的方法，这两个方法都写在循环里面的，例如爬取5个网站，每个网站存储一次，后面也会跟着存储，造成数据重复存储。解决方法是存储数据的一般逻辑是先查，再存，这个查比较重要，查询的方法也有多种，这里主要是根据库名来查找唯一的数据对象，使用<code>findOne</code>方法。注意，由于node.js是异步执行的，这里的闭包，每次只传一个i值进去，执行存储的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 将缓存数据存储到数据库</div><div class="line">function store2db(libObj)&#123;</div><div class="line">  console.log(libObj);</div><div class="line">  for (var i = 0; i &lt; libObj.length; i++) &#123;</div><div class="line">    (function(i)&#123;</div><div class="line">      var jsLib = new JsLib(&#123;</div><div class="line">          name: libObj[i].lib,</div><div class="line">          libsNum: libObj[i].num</div><div class="line">      &#125;);</div><div class="line">      </div><div class="line">      JsLib.findOne(&#123;&apos;name&apos;: libObj[i].lib&#125;,function(err,libDoc)&#123;</div><div class="line">        if(err) console.log(err);</div><div class="line">        // console.log(libDoc)</div><div class="line">        if (!libDoc)&#123;</div><div class="line">          jsLib.save(function(err,result)&#123;</div><div class="line">            if(err) console.log(&apos;保存数据出错&apos; + err);</div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">      &#125;)</div><div class="line">    &#125;)(i)</div><div class="line">  &#125;</div><div class="line">  console.log(&apos;一共存储&apos; + libObj.length + &apos;条数据到数据库&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-分页插件"><a href="#6-分页插件" class="headerlink" title="6.分页插件"></a>6.分页插件</h3><p>本爬虫前端使用了bootstrap.paginator插件，主要是前台分页，返回数据，根据点击的页数，来显示对应的数据，后期考虑使用AJAX请求的方式来实现翻页的效果，这里的注意项，主要是最后一页的显示，最好前面做个判断，因为返回的数据，不一定刚好是页数的整数倍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">function _paging(libObj) &#123;</div><div class="line">        var ele = $(&apos;#page&apos;);</div><div class="line">        var pages = Math.ceil(libObj.length/20);</div><div class="line">        console.log(&apos;总页数&apos; + pages);</div><div class="line">        ele.bootstrapPaginator(&#123;    </div><div class="line">            currentPage: 1,    </div><div class="line">            totalPages: pages,    </div><div class="line">            size:&quot;normal&quot;,    </div><div class="line">            bootstrapMajorVersion: 3,    </div><div class="line">            alignment:&quot;left&quot;,    </div><div class="line">            numberOfPages:pages,    </div><div class="line">            itemTexts: function (type, page, current) &#123;        </div><div class="line">                switch (type) &#123;            </div><div class="line">                    case &quot;first&quot;: return &quot;首页&quot;;            </div><div class="line">                    case &quot;prev&quot;: return &quot;上一页&quot;;            </div><div class="line">                    case &quot;next&quot;: return &quot;下一页&quot;;            </div><div class="line">                    case &quot;last&quot;: return &quot;末页&quot;;            </div><div class="line">                    case &quot;page&quot;: return page;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            onPageClicked:  function(event, originalEvent, type, page)&#123;</div><div class="line">                // console.log(&apos;当前选中第：&apos; + page + &apos;页&apos;);</div><div class="line">                var pHtml = &apos;&apos;;</div><div class="line">                var endPage;</div><div class="line">                var startPage = (page-1) * 20;</div><div class="line">                if (page &lt; pages) &#123;</div><div class="line">                     endPage = page * 20;</div><div class="line">                &#125;else&#123;</div><div class="line">                     endPage = libObj.length;</div><div class="line">                &#125;</div><div class="line">                for (var i = startPage; i &lt; endPage; i++) &#123;</div><div class="line">                    pHtml += &apos;&lt;tr&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += (i+1) + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += libObj[i].name + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += libObj[i].libsNum + &apos;&lt;/td&gt;&lt;/tr&gt;&apos;;</div><div class="line">                &#125;</div><div class="line">                libShow.html(pHtml);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><h2 id="1-前端"><a href="#1-前端" class="headerlink" title="1. 前端"></a>1. 前端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> </div><div class="line">$(function () &#123;</div><div class="line">    var query = $(&apos;.query&apos;),</div><div class="line">        rank = $(&apos;.rank&apos;),</div><div class="line">        show = $(&apos;.show&apos;),</div><div class="line">        queryLib = $(&apos;.queryLib&apos;),</div><div class="line">        libShow = $(&apos;#libShow&apos;),</div><div class="line">        libName = $(&apos;.libName&apos;),</div><div class="line">        displayResult = $(&apos;.displayResult&apos;);</div><div class="line"></div><div class="line">    var checkLib = (function()&#123;</div><div class="line"></div><div class="line">      function _query()&#123;</div><div class="line">        query.click(function()&#123;</div><div class="line">            $.post(</div><div class="line">                &apos;/query&apos;,</div><div class="line">                &#123;</div><div class="line">                    rank: rank.val(),</div><div class="line">                &#125;,</div><div class="line">                function(data)&#123;</div><div class="line">                    console.log(data);</div><div class="line">                &#125;</div><div class="line">            )</div><div class="line">        &#125;);</div><div class="line">        queryLib.click(function()&#123;</div><div class="line">            var inputLibName = libName.val();</div><div class="line">            if (inputLibName.length == 0) &#123;</div><div class="line">                alert(&apos;请输入库名~&apos;);</div><div class="line">                return;</div><div class="line">            &#125;</div><div class="line">            $.post(</div><div class="line">                &apos;/queryLib&apos;,</div><div class="line">                &#123;</div><div class="line">                    libName: inputLibName,</div><div class="line">                &#125;,</div><div class="line">                function(data)&#123;</div><div class="line">                    if(data.length == 0)&#123;</div><div class="line">                        alert(&apos;没有查询到名为&apos; + inputLibName + &apos;的库&apos;);</div><div class="line">                        libName.val(&apos;&apos;);</div><div class="line">                        libName.focus();</div><div class="line">                        libShow.html(&apos;&apos;)</div><div class="line">                        return;</div><div class="line">                    &#125;</div><div class="line">                    var libHtml = &apos;&apos;;</div><div class="line">                    for (var i = 0; i &lt; data.length; i++) &#123;</div><div class="line">                        libHtml += &apos;&lt;tr&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += (i+1) + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += data[i].name + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += data[i].libsNum + &apos;&lt;/td&gt;&lt;/tr&gt;&apos;;</div><div class="line">                    &#125;</div><div class="line">                    libShow.html(libHtml);</div><div class="line">                &#125;</div><div class="line">            )</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      function _showLibs()&#123;</div><div class="line">        show.click(function()&#123;</div><div class="line">            $.get(</div><div class="line">                &apos;/getLibs&apos;,</div><div class="line">                &#123;</div><div class="line">                    rank: rank.val(),</div><div class="line">                &#125;,</div><div class="line">                function(data)&#123;</div><div class="line">                    console.log(&apos;一共返回&apos;+ data.length + &apos;条数据&apos;);</div><div class="line">                    console.log(data)</div><div class="line">                    var libHtml = &apos;&apos;;</div><div class="line">                    for (var i = 0; i &lt; 20; i++) &#123;</div><div class="line">                        libHtml += &apos;&lt;tr&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += (i+1) + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += data[i].name + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                        libHtml += data[i].libsNum + &apos;&lt;/td&gt;&lt;/tr&gt;&apos;;</div><div class="line">                    &#125;</div><div class="line">                    displayResult.show();</div><div class="line">                    libShow.html(libHtml);// 点击显示按钮，显示前20项数据</div><div class="line">                    _paging(data);</div><div class="line">                &#125;</div><div class="line">            )</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      //翻页器</div><div class="line">      function _paging(libObj) &#123;</div><div class="line">        var ele = $(&apos;#page&apos;);</div><div class="line">        var pages = Math.ceil(libObj.length/20);</div><div class="line">        console.log(&apos;总页数&apos; + pages);</div><div class="line">        ele.bootstrapPaginator(&#123;    </div><div class="line">            currentPage: 1,    </div><div class="line">            totalPages: pages,    </div><div class="line">            size:&quot;normal&quot;,    </div><div class="line">            bootstrapMajorVersion: 3,    </div><div class="line">            alignment:&quot;left&quot;,    </div><div class="line">            numberOfPages:pages,    </div><div class="line">            itemTexts: function (type, page, current) &#123;        </div><div class="line">                switch (type) &#123;            </div><div class="line">                    case &quot;first&quot;: return &quot;首页&quot;;            </div><div class="line">                    case &quot;prev&quot;: return &quot;上一页&quot;;            </div><div class="line">                    case &quot;next&quot;: return &quot;下一页&quot;;            </div><div class="line">                    case &quot;last&quot;: return &quot;末页&quot;;            </div><div class="line">                    case &quot;page&quot;: return page;</div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            onPageClicked:  function(event, originalEvent, type, page)&#123;</div><div class="line">                // console.log(&apos;当前选中第：&apos; + page + &apos;页&apos;);</div><div class="line">                var pHtml = &apos;&apos;;</div><div class="line">                var endPage;</div><div class="line">                var startPage = (page-1) * 20;</div><div class="line">                if (page &lt; pages) &#123;</div><div class="line">                     endPage = page * 20;</div><div class="line">                &#125;else&#123;</div><div class="line">                     endPage = libObj.length;</div><div class="line">                &#125;</div><div class="line">                for (var i = startPage; i &lt; endPage; i++) &#123;</div><div class="line">                    pHtml += &apos;&lt;tr&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += (i+1) + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += libObj[i].name + &apos;&lt;/td&gt;&lt;td&gt;&apos;;</div><div class="line">                    pHtml += libObj[i].libsNum + &apos;&lt;/td&gt;&lt;/tr&gt;&apos;;</div><div class="line">                &#125;</div><div class="line">                libShow.html(pHtml);</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line"></div><div class="line">        function init() &#123;</div><div class="line">          _query();</div><div class="line">         _showLibs();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        return &#123;</div><div class="line">            init: init</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;)();</div><div class="line"></div><div class="line">    checkLib.init();</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="2-后端路由"><a href="#2-后端路由" class="headerlink" title="2.后端路由"></a>2.后端路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var mongoose = require(&apos;mongoose&apos;);</div><div class="line">var request = require(&apos;request&apos;);</div><div class="line">var cheerio =require(&apos;cheerio&apos;);</div><div class="line">var router = express.Router();</div><div class="line">var JsLib = require(&apos;../model/jsLib&apos;)</div><div class="line"></div><div class="line">/* 显示主页 */</div><div class="line">router.get(&apos;/&apos;, function(req, res, next) &#123;</div><div class="line">  res.render(&apos;index&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 显示库</div><div class="line">router.get(&apos;/getLibs&apos;,function(req,res,next)&#123;</div><div class="line">  JsLib.find(&#123;&#125;)</div><div class="line">  .sort(&#123;&apos;libsNum&apos;: -1&#125;)</div><div class="line">  .exec(function(err,data)&#123;</div><div class="line">    res.json(data);</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">// 库的查询</div><div class="line">router.post(&apos;/queryLib&apos;,function(req,res,next)&#123;</div><div class="line">  var libName = req.body.libName;</div><div class="line"></div><div class="line">  JsLib.find(&#123;</div><div class="line">    name: libName</div><div class="line">  &#125;).exec(function(err,data)&#123;</div><div class="line">    if (err) console.log(&apos;查询出现错误&apos; + err);</div><div class="line">    res.json(data);</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">router.post(&apos;/query&apos;,function(req,res,next) &#123;</div><div class="line">  var rank = req.body.rank;</div><div class="line">  var len = Math.round(rank/20);</div><div class="line">  </div><div class="line">  for (var i = 1; i &lt; len+1; i++) &#123;</div><div class="line">    (function(i)&#123;</div><div class="line">      var options = &#123;</div><div class="line">        url: &apos;http://www.alexa.cn/siterank/&apos; + i,</div><div class="line">        headers: &#123;</div><div class="line">          &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36&apos;</div><div class="line">        &#125;</div><div class="line">      &#125;;</div><div class="line">      request(options, function (err, response, body) &#123;</div><div class="line">          analyData(body,rank);</div><div class="line">      &#125;)</div><div class="line">    &#125;)(i)</div><div class="line">  &#125;</div><div class="line">  res.json(&apos;保存成功&apos;)</div><div class="line">&#125;)</div><div class="line"> </div><div class="line">var sites = [];</div><div class="line">var flag = 0;</div><div class="line">function analyData(data,rank) &#123;</div><div class="line">    if(data.indexOf(&apos;html&apos;) == -1) return false;</div><div class="line">    var $ = cheerio.load(data);// 传递 HTML</div><div class="line">    var sitesArr = $(&apos;.info-wrap .domain-link a&apos;).toArray();//将所有a链接存为数组</div><div class="line"></div><div class="line">    console.log(&apos;网站爬取中``&apos;)</div><div class="line">    for (var i = 0; i &lt; 10; i++) &#123; // ***这里后面要改，默认爬取前10名</div><div class="line">        var url = sitesArr[i].attribs.href;</div><div class="line">        sites.push(url);//保存网址，添加wwww前缀</div><div class="line">    &#125;</div><div class="line">    console.log(sites);</div><div class="line">    console.log(&apos;一共爬取&apos; + sites.length +&apos;个网站&apos;);</div><div class="line">    console.log(&apos;存储数据中...&apos;)</div><div class="line"></div><div class="line">    getScript(sites);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">// 获取JS库文件地址</div><div class="line">function getScript(urls) &#123;</div><div class="line">  var scriptArr = [];</div><div class="line">  var src = [];</div><div class="line">  var jsSrc = [];</div><div class="line">  for (var j = 0; j &lt; urls.length; j++) &#123;</div><div class="line">      (function(i,callback)&#123;</div><div class="line">        var options = &#123;</div><div class="line">            url: urls[i],</div><div class="line">            headers: &#123;</div><div class="line">              &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36&apos;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">        request(options, function (err, res, body) &#123;</div><div class="line">          if(err) console.log(&apos;出现错误: &apos;+err);</div><div class="line">          var $ = cheerio.load(body);</div><div class="line">          var scriptFile = $(&apos;script&apos;).toArray();</div><div class="line">          callback(scriptFile,options.url);</div><div class="line">        &#125;)</div><div class="line">    &#125;)(j,storeLib)</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  function storeLib(scriptFile,url)&#123;</div><div class="line">    flag++;// 是否存储数据的标志</div><div class="line">    scriptFile.forEach(function(item,index)&#123;</div><div class="line">      if (item.attribs.src != null) &#123;</div><div class="line">          obtainLibName(item.attribs.src,index);</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  </div><div class="line">      </div><div class="line">    function obtainLibName(jsLink,i)&#123;</div><div class="line">      var reg = /[^\/\\]+$/g;</div><div class="line">      var libName = jsLink.match(reg).join(&apos;&apos;);</div><div class="line">      var libFilter = libName.slice(0,libName.indexOf(&apos;.&apos;));</div><div class="line"></div><div class="line">        src.push(libFilter);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // console.log(src.length);</div><div class="line">    // console.log(calcNum(src).length)</div><div class="line">    (function(len,urlLength,src)&#123;</div><div class="line">      // console.log(&apos;length is &apos;+ len)</div><div class="line">      if (len == 10 ) &#123;// len长度为url的长度才向src和数据库里存储数据，防止重复储存</div><div class="line">        // calcNum(src);//存储数据到数据库 // ***这里后面要改，默认爬取前10名</div><div class="line">        var libSrc = calcNum(src);</div><div class="line">        store2db(libSrc);</div><div class="line">      &#125;</div><div class="line">    &#125;)(flag,urls.length,src)</div><div class="line">  &#125; </div><div class="line">&#125;// getScript END</div><div class="line"></div><div class="line">// 将缓存数据存储到数据库</div><div class="line">function store2db(libObj)&#123;</div><div class="line">  console.log(libObj);</div><div class="line">  for (var i = 0; i &lt; libObj.length; i++) &#123;</div><div class="line">    (function(i)&#123;</div><div class="line">      var jsLib = new JsLib(&#123;</div><div class="line">          name: libObj[i].lib,</div><div class="line">          libsNum: libObj[i].num</div><div class="line">      &#125;);</div><div class="line">      </div><div class="line">      JsLib.findOne(&#123;&apos;name&apos;: libObj[i].lib&#125;,function(err,libDoc)&#123;</div><div class="line">        if(err) console.log(err);</div><div class="line">        // console.log(libDoc)</div><div class="line">        if (!libDoc)&#123;</div><div class="line">          jsLib.save(function(err,result)&#123;</div><div class="line">            if(err) console.log(&apos;保存数据出错&apos; + err);</div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">      &#125;)</div><div class="line">    &#125;)(i)</div><div class="line">  &#125;</div><div class="line">  console.log(&apos;一共存储&apos; + libObj.length + &apos;条数据到数据库&apos;);</div><div class="line">&#125;</div><div class="line">// JS库排序算法</div><div class="line">function calcNum(arr)&#123;</div><div class="line">    var libObj = &#123;&#125;;</div><div class="line">    var result = [];</div><div class="line">    for (var i = 0, len = arr.length; i &lt; len; i++) &#123;</div><div class="line">        </div><div class="line">        if (libObj[arr[i]]) &#123;</div><div class="line">            libObj[arr[i]] ++;</div><div class="line">        &#125; else &#123;</div><div class="line">            libObj[arr[i]] = 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">   </div><div class="line">    for(var o in libObj)&#123;</div><div class="line">        result.push(&#123;</div><div class="line">            lib: o,</div><div class="line">            num: libObj[o]</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    result.sort(function(a,b)&#123;</div><div class="line">        return b.num - a.num;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">module.exports = router;</div></pre></td></tr></table></figure>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>通过这个小爬虫，学习到很多知识，例如爬虫的反爬虫有哪些策越，意识到node.js的异步执行特性，前后端是怎么进行交互的。同时，也意识到有一些方面的不足，后面还需要继续改进，欢迎大家的相互交流。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/14/0514 - mootools源码之数组/" rel="next" title="Mootools源码之数组">
+                <i class="fa fa-chevron-left"></i> Mootools源码之数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="周打杂" />
+          <p class="site-author-name" itemprop="name">周打杂</p>
+           
+              <p class="site-description motion-element" itemprop="description">不一样的烟火</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于调试Node"><span class="nav-number">1.1.</span> <span class="nav-text">关于调试Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所碰到的问题"><span class="nav-number">1.2.</span> <span class="nav-text">所碰到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-request请求多个页面"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. request请求多个页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-多层回调"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 多层回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-正则获取JS库"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 正则获取JS库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-cheerio模块获取JS引用链接"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.cheerio模块获取JS引用链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-存储数据到数据库"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.存储数据到数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-分页插件"><span class="nav-number">1.2.6.</span> <span class="nav-text">6.分页插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整代码"><span class="nav-number">2.</span> <span class="nav-text">完整代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-前端"><span class="nav-number">2.1.</span> <span class="nav-text">1. 前端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-后端路由"><span class="nav-number">2.2.</span> <span class="nav-text">2.后端路由</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">周打杂</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
