@@ -1,26 +1,180 @@
 <!DOCTYPE html>
+
 <head>
-<meta charset="utf-8">
-<meta description="blog">
-<title>周大侠的博客</title>
+  <meta charset="utf-8">
+  <meta description="blog">
+  <title>Stacy Chou</title>
 
-<style>
-  .main { padding: 50px 0; }
-  .main .nav { width: 200px; margin: 0 auto; }
-  .main .nav li { list-style: none; }
-  .main .nav li a { font-size: 14px; color: #000; text-decoration: none; }
-</style>
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      margin: 0;
+    }
 
+    body {
+      font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+      color: #333;
+    }
+
+    #wrapper {
+      position: absolute;
+      left: 0;
+      width: 320px;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      margin-left: -160px;
+      margin-top: -160px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    h1 {
+      font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 9px;
+      text-transform: uppercase;
+      margin: 12px 0;
+      left: 4px;
+    }
+
+    h2 {
+      color: #999;
+      font-weight: normal;
+      font-size: 15px;
+      letter-spacing: .12em;
+      margin-bottom: 30px;
+      left: 3px;
+    }
+
+    h1,
+    h2 {
+      position: relative;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 2em;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    a {
+      color: #999;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    a:hover {
+      color: #f33;
+    }
+  </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120973967-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120973967-1');
+</script>
 </head>
 
 <body>
-<div class="main">
-  <div class="nav">
-    <ul>
-      <li><a href="https://github.com/XinChou16/XinChou16.github.io/issues">文章</a></li>
-    </ul>
+  <div id="wrapper">
+    <h1>Stacy Chou</h1>
+    <h2>Rethink, seek &amp; Things in Between&nbsp;</h2>
+    <p>
+      <a href="http://weibo.com/6054819369" target="_blank">微博</a>
+    </p>
+    <p>
+      <a href="https://www.zhihu.com/people/zhouxinmine/" target="_blank">知乎</a>
+    </p>
+    <p>
+      <a href="https://twitter.com/zhouxinmine" target="_blank">Twitter</a>
+    </p>
+    <p>
+      <a href="https://github.com/XinChou16/" target="_blank">Github</a>
+    </p>
+    <p>
+      <a href="https://github.com/XinChou16/" target="_blank">Blog</a>
+    </p>
   </div>
-</div>
+  <canvas></canvas>
+
+  <script>
+    document.addEventListener('touchmove', function (e) {
+      e.preventDefault()
+    })
+    var c = document.getElementsByTagName('canvas')[0],
+      x = c.getContext('2d'),
+      pr = window.devicePixelRatio || 1,
+      w = window.innerWidth,
+      h = window.innerHeight,
+      f = 90,
+      q,
+      m = Math,
+      r = 0,
+      u = m.PI * 2,
+      v = m.cos,
+      z = m.random
+    c.width = w * pr
+    c.height = h * pr
+    x.scale(pr, pr)
+    x.globalAlpha = 0.6
+
+    function i() {
+      x.clearRect(0, 0, w, h)
+      q = [{
+        x: 0,
+        y: h * .7 + f
+      }, {
+        x: 0,
+        y: h * .7 - f
+      }]
+      while (q[1].x < w + f) d(q[0], q[1])
+    }
+
+    function d(i, j) {
+      x.beginPath()
+      x.moveTo(i.x, i.y)
+      x.lineTo(j.x, j.y)
+      var k = j.x + (z() * 2 - 0.25) * f,
+        n = y(j.y)
+      x.lineTo(k, n)
+      x.closePath()
+      r -= u / -50
+      x.fillStyle = '#' + (v(r) * 127 + 128 << 16 | v(r + u / 3) * 127 + 128 << 8 | v(r + u / 3 * 2) * 127 + 128).toString(16)
+      x.fill()
+      q[0] = q[1]
+      q[1] = {
+        x: k,
+        y: n
+      }
+    }
+
+    function y(p) {
+      var t = p + (z() * 2 - 1.1) * f
+      return (t > h || t < 0) ? y(p) : t
+    }
+    document.onclick = i
+    document.ontouchstart = i
+    i()
+
+  </script>
 </body>
 
 </html>
