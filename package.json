@@ -1,0 +1,27 @@
+{
+  "name": "XinChou16.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/XinChou16/XinChou16.github.io.git"
+  },
+  "author": "Violet <violetsshine@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XinChou16/XinChou16.github.io/issues"
+  },
+  "homepage": "https://github.com/XinChou16/XinChou16.github.io#readme",
+  "scripts": {
+    "dev": "npm run docs:dev",
+    "build": "npm run docs:build",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
