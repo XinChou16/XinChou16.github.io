@@ -6,7 +6,10 @@ module.exports = {
             {
                 title: 'UTILS',
                 collapseable: false,
-                children: ['utils/git']
+                children: [
+                    'utils/git',
+                    'utils/github-actions'
+                ]
             }
         ]
     }
