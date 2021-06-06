@@ -1,3 +1,4 @@
+# Github actions
 
 1. 获取打包的id，用作 docker tag
 
@@ -52,9 +53,9 @@ github.event_name: #当前提交事件，如push, pull_request
 
 9. 提交不进行打包
 
-1. 默认每次提交都会进行打包，可以在 commit msg中的body添加 `[skip ci]`来过滤这次打包
-2. 或者在触发条件下设置模糊匹配分支
-3. 设置TAG，根据 TAG 触发进行打包
+- 默认每次提交都会进行打包，可以在 commit msg中的body添加 `[skip ci]`来过滤这次打包
+- 或者在触发条件下设置模糊匹配分支
+- 设置TAG，根据 TAG 触发进行打包
 
 10. 写入环境变量
 
