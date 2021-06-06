@@ -13,11 +13,12 @@ module.exports = {
         ],
         sidebar: [
             {
-                title: 'Utils',
+                title: 'Tools',
                 collapseable: false,
                 children: [
                     'utils/git',
-                    'utils/github-actions'
+                    'utils/github-actions',
+                    'utils/husky'
                 ]
             }
         ]
