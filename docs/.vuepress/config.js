@@ -20,6 +20,13 @@ module.exports = {
                     'utils/github-actions',
                     'utils/husky'
                 ]
+            },
+            {
+                title: 'Vue',
+                collapseable: true,
+                children: [
+                    'vue/observer-array'
+                ]
             }
         ]
     }
