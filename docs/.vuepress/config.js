@@ -27,6 +27,12 @@ module.exports = {
                 children: [
                     'vue/observer-array'
                 ]
+            },
+            {
+                title: 'build',
+                children: [
+                    'build/rollup-plugin'
+                ]
             }
         ]
     }
