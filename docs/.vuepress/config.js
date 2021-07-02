@@ -22,6 +22,12 @@ module.exports = {
                 ]
             },
             {
+                title: 'build',
+                children: [
+                    'build/rollup-plugin'
+                ]
+            },
+            {
                 title: 'Vue',
                 collapseable: true,
                 children: [
@@ -29,11 +35,13 @@ module.exports = {
                 ]
             },
             {
-                title: 'build',
+                title: 'Vuex',
+                collapseable: true,
                 children: [
-                    'build/rollup-plugin'
+                    'vuex/vuex-install',
+                    'vuex/vuex-commit'
                 ]
-            }
+            },
         ]
     }
 }
