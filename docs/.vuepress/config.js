@@ -39,7 +39,9 @@ module.exports = {
                 collapseable: true,
                 children: [
                     'vuex/vuex-install',
-                    'vuex/vuex-commit'
+                    'vuex/vuex-commit',
+                    'vuex/vuex-dispatch',
+                    'vuex/vuex-subscribe',
                 ]
             },
         ]
