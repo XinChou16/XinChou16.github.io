@@ -28,6 +28,13 @@ module.exports = {
                 ]
             },
             {
+                title: 'js',
+                children: [
+                    'js/promise',
+                    'ts/interface'
+                ]
+            },
+            {
                 title: 'Vue',
                 collapseable: true,
                 children: [
