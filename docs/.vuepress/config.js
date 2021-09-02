@@ -31,7 +31,11 @@ module.exports = {
                 title: 'Vue',
                 collapseable: true,
                 children: [
-                    'vue/observer-array'
+                    'vue/observer-array',
+                    'vue/inject',
+                    'vue/assets',
+                    'vue/use',
+                    'vue/mixin'
                 ]
             },
             {
