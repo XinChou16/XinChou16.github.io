@@ -42,7 +42,8 @@ module.exports = {
                     'vue/inject',
                     'vue/assets',
                     'vue/use',
-                    'vue/mixin'
+                    'vue/mixin',
+                    'vue/dep',
                 ]
             },
             {
