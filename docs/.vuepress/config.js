@@ -56,6 +56,13 @@ module.exports = {
                     'vuex/vuex-subscribe',
                 ]
             },
+            {
+                title: 'Vue-router',
+                collapseable: true,
+                children: [
+                    'vue-router/push-state'
+                ]
+            },
         ]
     }
 }
