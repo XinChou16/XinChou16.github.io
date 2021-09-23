@@ -24,7 +24,8 @@ module.exports = {
             {
                 title: 'build',
                 children: [
-                    'build/rollup-plugin'
+                    'build/rollup-plugin',
+                    'build/build-with-file'
                 ]
             },
             {
