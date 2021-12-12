@@ -64,6 +64,14 @@ module.exports = {
                     'vue-router/push-state'
                 ]
             },
+            {
+                title: 'Mac',
+                collapseable: true,
+                children: [
+                    'macos/ssh-key',
+                    'macos/shortcuts'
+                ]
+            },
         ]
     }
 }
