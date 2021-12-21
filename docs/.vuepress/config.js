@@ -28,6 +28,7 @@ module.exports = {
                     'build/build-with-file',
                     'build/env-setting',
                     'build/webpack5-config',
+                    'build/webpack5-plus',
                 ]
             },
             {
