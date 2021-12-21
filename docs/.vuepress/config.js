@@ -27,6 +27,7 @@ module.exports = {
                     'build/rollup-plugin',
                     'build/build-with-file',
                     'build/env-setting',
+                    'build/webpack5-config',
                 ]
             },
             {
