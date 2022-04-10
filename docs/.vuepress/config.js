@@ -48,6 +48,9 @@ module.exports = {
                     'vue/use',
                     'vue/mixin',
                     'vue/dep',
+                    'vue2/init-state-compute',
+                    'vue2/init-state-data',
+                    'vue2/init-state-props',
                 ]
             },
             {
