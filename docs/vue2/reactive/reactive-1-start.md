@@ -43,4 +43,5 @@ render({ count: 1 });
 }
 ```
 
-[→Vue实例]()
+<a style="display:block; float: left" href="./reactive-intro.md"> < intro </a>
+<a style="display:block; float: right" href="./reactive-2-instance.md">Vue实例 ></a>
