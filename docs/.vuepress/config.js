@@ -35,7 +35,8 @@ module.exports = {
                 title: 'js',
                 children: [
                     'js/promise',
-                    'ts/interface'
+                    'ts/interface',
+                    'js/clone',
                 ]
             },
             {
