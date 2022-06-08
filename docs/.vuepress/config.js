@@ -54,6 +54,19 @@ module.exports = {
                 ]
             },
             {
+                title: 'Vue reactive',
+                collapseable: true,
+                children: [
+                    'vue2/reactive/reactive-intro',
+                    'vue2/reactive/reactive-1-start',
+                    'vue2/reactive/reactive-2-instance',
+                    'vue2/reactive/reactive-3-state',
+                    'vue2/reactive/reactive-4-dep',
+                    'vue2/reactive/reactive-5-observer',
+                    'vue2/reactive/reactive-6-watcher',
+                ]
+            },
+            {
                 title: 'Vuex',
                 collapseable: true,
                 children: [
