@@ -52,6 +52,7 @@ module.exports = {
                     'vue2/init-state-compute',
                     'vue2/init-state-data',
                     'vue2/init-state-props',
+                    'vue2/instance/index'
                 ]
             },
             {
@@ -71,6 +72,7 @@ module.exports = {
                 title: 'Vuex',
                 collapseable: true,
                 children: [
+                    'vuex/vuex-intro',
                     'vuex/vuex-install',
                     'vuex/vuex-commit',
                     'vuex/vuex-dispatch',
