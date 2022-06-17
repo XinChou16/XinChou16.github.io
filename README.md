@@ -19,7 +19,7 @@
 ## 开发代理
 
 - [webpack proxy开发实践]()
-- [whistle 日常开发最佳经验总结]()
+- [whistle 日常开发最佳经验总结](./docs/whistle/tutorial.md)
 
 ## 框架相关
 
