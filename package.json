@@ -22,6 +22,11 @@
   "keywords": [],
   "description": "",
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "insert-content-html-wepack-plugin": "^1.0.0",
+    "pinia-plugin-undo-redo": "^1.0.0",
+    "vite-plugin-html-insert": "^1.0.1",
+    "vue-url-search-params": "^1.1.3",
+    "vuepress": "^1.8.2",
+    "whistle.view-jwt": "^0.2.1"
   }
 }
