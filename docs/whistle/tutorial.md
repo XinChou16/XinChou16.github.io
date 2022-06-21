@@ -5,7 +5,7 @@
 - [whistle github](https://github.com/avwo/whistle)
 - [whistle doc](https://avwo.github.io/whistle/)
 - [whistle plugin](https://github.com/whistle-plugins/examples)
-- 【whistle view jwt](https://www.npmjs.com/package/whistle.view-jwt)
+- [whistle view jwt](https://www.npmjs.com/package/whistle.view-jwt)
 
 ## 功能
 

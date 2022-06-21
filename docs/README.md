@@ -7,6 +7,7 @@ Welcome~
 
 ## 构建相关
 
+- [insert-content-html-plugin插件实现](./build/insert-content-html-plugin.md)
 - [rollup相关配置实践]()
 - [husky+lint-stages最佳实践]()
 - [webpack配置最佳实践]()

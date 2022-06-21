@@ -30,6 +30,7 @@ module.exports = {
                     'build/webpack5-config',
                     'build/webpack5-plus',
                     'whistle/tutorial',
+                    'build/insert-content-html-plugin',
                 ]
             },
             {
