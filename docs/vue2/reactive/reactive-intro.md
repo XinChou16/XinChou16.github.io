@@ -26,6 +26,51 @@ new Vue({
 });
 ```
 
+DEMO首页完整源码
+
+```html
+<button id="plus">+</button>
+<button id="minus">-</button>
+
+<script type="module">
+  import Vue from './index.js';
+
+  var render = (data) => {
+    var $app = document.querySelector('#app');
+    $app.innerHTML = Object.keys(data)
+      .map(key => {
+        return `<p>${key}: ${data[key]}</p>`;
+      })
+      .join('');
+  };
+  plus.onclick = () => vm.count++;
+  minus.onclick = () => vm.count--;
+
+  var vm = window.vm = new Vue({
+    data: {
+      count: 1,
+    },
+    computed: {
+      size() {
+        const val =  this.count + 1;
+        console.log('size evaluate', val);
+
+        render({
+          count: this.count,
+          size: val,
+        });
+
+        return val;
+      }
+    }
+  });
+
+  console.log(vm);
+
+</script>
+
+```
+
 ## 目录
 
 包括以下几部分
