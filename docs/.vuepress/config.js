@@ -80,6 +80,7 @@ module.exports = {
                     'vuex/vuex-commit',
                     'vuex/vuex-dispatch',
                     'vuex/vuex-subscribe',
+                    'vuex/vuex-core',
                 ]
             },
             {

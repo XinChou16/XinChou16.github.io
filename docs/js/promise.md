@@ -30,7 +30,7 @@ class MyPromise {
     onFail(reason) {
         queueMicrotask(() => {
             this.status = 'rejected';
-            this.reason = reason;
+            this.value = reason;
             this.runCallbacks();
         });
     }
