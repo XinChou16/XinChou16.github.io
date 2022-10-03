@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vite source code | Violet</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.7cfabf05.css" as="style"><link rel="preload" href="/assets/js/app.8dc5394b.js" as="script"><link rel="preload" href="/assets/js/2.54a75a60.js" as="script"><link rel="preload" href="/assets/js/27.08117d5b.js" as="script"><link rel="prefetch" href="/assets/js/10.60060246.js"><link rel="prefetch" href="/assets/js/11.ed41270b.js"><link rel="prefetch" href="/assets/js/12.2096ad63.js"><link rel="prefetch" href="/assets/js/13.5e69c974.js"><link rel="prefetch" href="/assets/js/14.01f51ee3.js"><link rel="prefetch" href="/assets/js/15.156a70f8.js"><link rel="prefetch" href="/assets/js/16.0cacaae3.js"><link rel="prefetch" href="/assets/js/17.6c1cd472.js"><link rel="prefetch" href="/assets/js/18.b8420180.js"><link rel="prefetch" href="/assets/js/19.68833a5a.js"><link rel="prefetch" href="/assets/js/20.9ea51fc7.js"><link rel="prefetch" href="/assets/js/21.95c00611.js"><link rel="prefetch" href="/assets/js/22.dd92ff06.js"><link rel="prefetch" href="/assets/js/23.2bd9a697.js"><link rel="prefetch" href="/assets/js/24.ad10cd8a.js"><link rel="prefetch" href="/assets/js/25.4c426cc3.js"><link rel="prefetch" href="/assets/js/26.8053fe93.js"><link rel="prefetch" href="/assets/js/28.05875278.js"><link rel="prefetch" href="/assets/js/29.313a54f2.js"><link rel="prefetch" href="/assets/js/3.000b4b9e.js"><link rel="prefetch" href="/assets/js/30.39490ef8.js"><link rel="prefetch" href="/assets/js/31.7372076f.js"><link rel="prefetch" href="/assets/js/32.b71c774a.js"><link rel="prefetch" href="/assets/js/33.7eaf50e3.js"><link rel="prefetch" href="/assets/js/34.c644c759.js"><link rel="prefetch" href="/assets/js/35.9a365bb0.js"><link rel="prefetch" href="/assets/js/36.3440fc56.js"><link rel="prefetch" href="/assets/js/37.bff60467.js"><link rel="prefetch" href="/assets/js/38.2469e2d6.js"><link rel="prefetch" href="/assets/js/39.e08a492c.js"><link rel="prefetch" href="/assets/js/4.d9a78e4c.js"><link rel="prefetch" href="/assets/js/40.27fee081.js"><link rel="prefetch" href="/assets/js/41.f64a4cb9.js"><link rel="prefetch" href="/assets/js/42.1c7cffe4.js"><link rel="prefetch" href="/assets/js/43.7a369bda.js"><link rel="prefetch" href="/assets/js/44.65288a4d.js"><link rel="prefetch" href="/assets/js/45.215b6f75.js"><link rel="prefetch" href="/assets/js/46.48b5aabd.js"><link rel="prefetch" href="/assets/js/47.89a2b93c.js"><link rel="prefetch" href="/assets/js/48.8877653a.js"><link rel="prefetch" href="/assets/js/49.62b05ecd.js"><link rel="prefetch" href="/assets/js/5.85a4d6eb.js"><link rel="prefetch" href="/assets/js/50.2329461d.js"><link rel="prefetch" href="/assets/js/51.a97ae942.js"><link rel="prefetch" href="/assets/js/52.5214468a.js"><link rel="prefetch" href="/assets/js/53.d148d5de.js"><link rel="prefetch" href="/assets/js/54.2f651a14.js"><link rel="prefetch" href="/assets/js/6.c7fedc72.js"><link rel="prefetch" href="/assets/js/7.15fc775b.js"><link rel="prefetch" href="/assets/js/8.e04d4580.js"><link rel="prefetch" href="/assets/js/9.c39bdc59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7cfabf05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Violet</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Tools</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/utils/git.html" class="sidebar-link">Git Command</a></li><li><a href="/utils/github-actions.html" class="sidebar-link">Github actions</a></li><li><a href="/utils/husky.html" class="sidebar-link">husky + lint-staged + prettier</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>build</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue reactive</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vuex</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue-router</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mac</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vite-source-code"><a href="#vite-source-code" class="header-anchor">#</a> vite source code</h1> <ol><li>pkg.json</li></ol> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 当前项目均使用 ESM 模块</span>
+    <span class="token property">&quot;bin&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;vite&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bin/vite.js&quot;</span> <span class="token comment">// MAIN BIN FILE</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;main&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/node/index.js&quot;</span><span class="token punctuation">,</span> <span class="token comment">// CJS 主入口</span>
+    <span class="token property">&quot;module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/node/index.js&quot;</span><span class="token punctuation">,</span> <span class="token comment">// ESM 主入口</span>
+    <span class="token property">&quot;types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/node/index.d.ts&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 类型信息</span>
+    <span class="token property">&quot;exports&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;.&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/node/index.d.ts&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;import&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/node/index.js&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;require&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./index.cjs&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;./client&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./client.d.ts&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;./dist/client/*&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./dist/client/*&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;./package.json&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./package.json&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// npm 包安装下载时包含的文件目录信息</span>
+        <span class="token string">&quot;bin&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;dist&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;client.d.ts&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;index.cjs&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;src/client&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;types&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;engines&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;node&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^14.18.0 || &gt;=16.0.0&quot;</span> <span class="token comment">// node 版本要求，注意</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rimraf dist &amp;&amp; pnpm run build-bundle -w&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rimraf dist &amp;&amp; run-s build-bundle build-types&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-bundle&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rollup --config rollup.config.ts --configPlugin typescript&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;run-s build-types-temp build-types-pre-patch build-types-roll build-types-post-patch build-types-check&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types-temp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tsc --emitDeclarationOnly --outDir temp/node -p src/node&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types-pre-patch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tsx scripts/prePatchTypes.ts&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types-roll&quot;</span><span class="token operator">:</span> <span class="token string">&quot;api-extractor run &amp;&amp; rimraf temp&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types-post-patch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tsx scripts/postPatchTypes.ts&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;build-types-check&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tsc --project tsconfig.check.json&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint --cache --ext .ts src/**&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prettier --write --cache --parser typescript \&quot;src/**/*.ts\&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;prepublishOnly&quot;</span><span class="token operator">:</span> <span class="token string">&quot;npm run build&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;//&quot;</span><span class="token operator">:</span> <span class="token string">&quot;READ CONTRIBUTING.md to understand what to put under deps vs. devDeps!&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 安装在 deps 和 devDeps的区别</span>
+    <span class="token comment">// https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md#notes-on-dependencies</span>
+    <span class="token property">&quot;dependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;esbuild&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.15.9&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;postcss&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.4.17&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;resolve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.22.1&quot;</span><span class="token punctuation">,</span> <span class="token comment">// ?</span>
+        <span class="token property">&quot;rollup&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.79.1&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;optionalDependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;fsevents&quot;</span><span class="token operator">:</span> <span class="token string">&quot;~2.3.2&quot;</span> <span class="token comment">// ?</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;devDependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;@ampproject/remapping&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.2.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@babel/parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.19.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@babel/types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.19.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@jridgewell/trace-mapping&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.3.15&quot;</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// ROLLUP PLUGIN GROUP</span>
+        <span class="token property">&quot;@rollup/plugin-alias&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.1.9&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/plugin-commonjs&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^22.0.2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/plugin-dynamic-import-vars&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.4.4&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/plugin-json&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.1.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/plugin-node-resolve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;14.1.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/plugin-typescript&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.5.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;@rollup/pluginutils&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.2.1&quot;</span><span class="token punctuation">,</span>
+
+        <span class="token property">&quot;acorn&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.8.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;cac&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^6.7.14&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;chokidar&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.5.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;connect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.7.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;connect-history-api-fallback&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.0&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 提供history模式的兼容</span>
+        <span class="token property">&quot;convert-source-map&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.8.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;cors&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.8.5&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;cross-spawn&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.0.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;debug&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.3.4&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 调试信息输出库</span>
+        <span class="token property">&quot;dotenv&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^14.3.2&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 环境变量</span>
+        <span class="token property">&quot;dotenv-expand&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^5.1.0&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 环境变量</span>
+        <span class="token property">&quot;es-module-lexer&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;estree-walker&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;etag&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.8.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;fast-glob&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.2.12&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;http-proxy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.18.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;json5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.2.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;launch-editor-middleware&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.6.0&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 尤大写的跳转文件行数的，跨浏览器支持，参考了react-dev-tools相关</span>
+        <span class="token property">&quot;magic-string&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.26.5&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 字符串操作的</span>
+        <span class="token property">&quot;micromatch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.5&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;mlly&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.5.16&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;mrmime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;okie&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;open&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.4.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;parse5&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.1.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;periscopic&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.0.4&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;picocolors&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;picomatch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.3.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;postcss-import&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^15.0.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;postcss-load-config&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;postcss-modules&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^5.0.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;resolve.exports&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.1.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sirv&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;source-map-js&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^1.0.2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;source-map-support&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.5.21&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;strip-ansi&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;strip-literal&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.4.2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;tsconfck&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;tslib&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.4.0&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;dep-types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;link:./src/types&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;types&quot;</span><span class="token operator">:</span> <span class="token string">&quot;link:./types&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;ufo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.8.5&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;ws&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.9.0&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;peerDependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;less&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sass&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;stylus&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sugarss&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;terser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^5.4.0&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 应该是不输出警告的作用</span>
+    <span class="token property">&quot;peerDependenciesMeta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;sass&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;optional&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;stylus&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;optional&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;less&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;optional&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sugarss&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;optional&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;terser&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;optional&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新于:</span> <span class="time">10/3/2022, 12:58:50 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8dc5394b.js" defer></script><script src="/assets/js/2.54a75a60.js" defer></script><script src="/assets/js/27.08117d5b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue.component(), directive(), filter()方法 | Violet</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.7cfabf05.css" as="style"><link rel="preload" href="/assets/js/app.8dc5394b.js" as="script"><link rel="preload" href="/assets/js/2.54a75a60.js" as="script"><link rel="preload" href="/assets/js/29.313a54f2.js" as="script"><link rel="prefetch" href="/assets/js/10.60060246.js"><link rel="prefetch" href="/assets/js/11.ed41270b.js"><link rel="prefetch" href="/assets/js/12.2096ad63.js"><link rel="prefetch" href="/assets/js/13.5e69c974.js"><link rel="prefetch" href="/assets/js/14.01f51ee3.js"><link rel="prefetch" href="/assets/js/15.156a70f8.js"><link rel="prefetch" href="/assets/js/16.0cacaae3.js"><link rel="prefetch" href="/assets/js/17.6c1cd472.js"><link rel="prefetch" href="/assets/js/18.b8420180.js"><link rel="prefetch" href="/assets/js/19.68833a5a.js"><link rel="prefetch" href="/assets/js/20.9ea51fc7.js"><link rel="prefetch" href="/assets/js/21.95c00611.js"><link rel="prefetch" href="/assets/js/22.dd92ff06.js"><link rel="prefetch" href="/assets/js/23.2bd9a697.js"><link rel="prefetch" href="/assets/js/24.ad10cd8a.js"><link rel="prefetch" href="/assets/js/25.4c426cc3.js"><link rel="prefetch" href="/assets/js/26.8053fe93.js"><link rel="prefetch" href="/assets/js/27.08117d5b.js"><link rel="prefetch" href="/assets/js/28.05875278.js"><link rel="prefetch" href="/assets/js/3.000b4b9e.js"><link rel="prefetch" href="/assets/js/30.39490ef8.js"><link rel="prefetch" href="/assets/js/31.7372076f.js"><link rel="prefetch" href="/assets/js/32.b71c774a.js"><link rel="prefetch" href="/assets/js/33.7eaf50e3.js"><link rel="prefetch" href="/assets/js/34.c644c759.js"><link rel="prefetch" href="/assets/js/35.9a365bb0.js"><link rel="prefetch" href="/assets/js/36.3440fc56.js"><link rel="prefetch" href="/assets/js/37.bff60467.js"><link rel="prefetch" href="/assets/js/38.2469e2d6.js"><link rel="prefetch" href="/assets/js/39.e08a492c.js"><link rel="prefetch" href="/assets/js/4.d9a78e4c.js"><link rel="prefetch" href="/assets/js/40.27fee081.js"><link rel="prefetch" href="/assets/js/41.f64a4cb9.js"><link rel="prefetch" href="/assets/js/42.1c7cffe4.js"><link rel="prefetch" href="/assets/js/43.7a369bda.js"><link rel="prefetch" href="/assets/js/44.65288a4d.js"><link rel="prefetch" href="/assets/js/45.215b6f75.js"><link rel="prefetch" href="/assets/js/46.48b5aabd.js"><link rel="prefetch" href="/assets/js/47.89a2b93c.js"><link rel="prefetch" href="/assets/js/48.8877653a.js"><link rel="prefetch" href="/assets/js/49.62b05ecd.js"><link rel="prefetch" href="/assets/js/5.85a4d6eb.js"><link rel="prefetch" href="/assets/js/50.2329461d.js"><link rel="prefetch" href="/assets/js/51.a97ae942.js"><link rel="prefetch" href="/assets/js/52.5214468a.js"><link rel="prefetch" href="/assets/js/53.d148d5de.js"><link rel="prefetch" href="/assets/js/54.2f651a14.js"><link rel="prefetch" href="/assets/js/6.c7fedc72.js"><link rel="prefetch" href="/assets/js/7.15fc775b.js"><link rel="prefetch" href="/assets/js/8.e04d4580.js"><link rel="prefetch" href="/assets/js/9.c39bdc59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7cfabf05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Violet</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tools</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>build</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/observer-array.html" class="sidebar-link">Vue 中对数组变量的拦截监听</a></li><li><a href="/vue/inject.html" class="sidebar-link">Vue provide/inject</a></li><li><a href="/vue/assets.html" aria-current="page" class="active sidebar-link">Vue.component(), directive(), filter()方法</a></li><li><a href="/vue/use.html" class="sidebar-link">Vue.use()方法</a></li><li><a href="/vue/mixin.html" class="sidebar-link">Vue.mixin()方法</a></li><li><a href="/vue/dep.html" class="sidebar-link">Dep</a></li><li><a href="/vue2/init-state-compute.html" class="sidebar-link">vue compute 初始化</a></li><li><a href="/vue2/init-state-data.html" class="sidebar-link">vue data 初始化</a></li><li><a href="/vue2/init-state-props.html" class="sidebar-link">vue props 初始化</a></li><li><a href="/vue2/instance/api.html" class="sidebar-link">instance</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue reactive</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vuex</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue-router</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mac</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-component-directive-filter-方法"><a href="#vue-component-directive-filter-方法" class="header-anchor">#</a> Vue.component(), directive(), filter()方法</h1> <blockquote><p>全局方法别名</p></blockquote> <p>可以接收一个对象和一个函数</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// src/core/global-api/assets.js</span>
+
+<span class="token keyword">function</span> <span class="token function">initAssetRegisters</span><span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 组件选项类型：三种[component, filter, directive]</span>
+  config<span class="token punctuation">.</span>_assetTypes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Vue<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> definition</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
+       * Vue.filter('upper'), -&gt; this.options.filters.upper
+       * Vue.filter('upper', () =&gt; {}), -&gt; this.options.filters.upper
+       *
+      */</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>definition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span>type <span class="token operator">+</span> <span class="token string">'s'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 如果是组件选项，则判断组件名是否是保留标签名称</span>
+        <span class="token comment">// isReservedTag目前在配置里是始终返回 false, 在哪覆盖的，后续再补充上@todo</span>
+        <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'component'</span> <span class="token operator">&amp;&amp;</span> config<span class="token punctuation">.</span><span class="token function">isReservedTag</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">warn</span><span class="token punctuation">(</span>
+              <span class="token string">'Do not use built-in or reserved HTML elements as component '</span> <span class="token operator">+</span>
+                <span class="token string">'id: '</span> <span class="token operator">+</span>
+                id
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 如果当前为组件，且传入的选项为对象，则根据名称来注册</span>
+        <span class="token comment">// 创建继承实例</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'component'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isPlainObject</span><span class="token punctuation">(</span>definition<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          definition<span class="token punctuation">.</span>name <span class="token operator">=</span> definition<span class="token punctuation">.</span>name <span class="token operator">||</span> id<span class="token punctuation">;</span>
+          definition <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>definition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 如果是指令，且为函数，则将该方法，作为 bind, update的回调，如果为对象，则自动使用</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">===</span> <span class="token string">'directive'</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> definition <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          definition <span class="token operator">=</span> <span class="token punctuation">{</span> bind<span class="token operator">:</span> definition<span class="token punctuation">,</span> update<span class="token operator">:</span> definition <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// </span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span>type <span class="token operator">+</span> <span class="token string">'s'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> definition<span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> definition<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新于:</span> <span class="time">9/2/2021, 1:44:36 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue/inject.html" class="prev">
+        Vue provide/inject
+      </a></span> <span class="next"><a href="/vue/use.html">
+        Vue.use()方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8dc5394b.js" defer></script><script src="/assets/js/2.54a75a60.js" defer></script><script src="/assets/js/29.313a54f2.js" defer></script>
+  </body>
+</html>

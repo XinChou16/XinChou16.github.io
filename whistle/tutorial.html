@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Whistle 最佳跨平台代理工具实践 | Violet</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.7cfabf05.css" as="style"><link rel="preload" href="/assets/js/app.8dc5394b.js" as="script"><link rel="preload" href="/assets/js/2.54a75a60.js" as="script"><link rel="preload" href="/assets/js/54.2f651a14.js" as="script"><link rel="prefetch" href="/assets/js/10.60060246.js"><link rel="prefetch" href="/assets/js/11.ed41270b.js"><link rel="prefetch" href="/assets/js/12.2096ad63.js"><link rel="prefetch" href="/assets/js/13.5e69c974.js"><link rel="prefetch" href="/assets/js/14.01f51ee3.js"><link rel="prefetch" href="/assets/js/15.156a70f8.js"><link rel="prefetch" href="/assets/js/16.0cacaae3.js"><link rel="prefetch" href="/assets/js/17.6c1cd472.js"><link rel="prefetch" href="/assets/js/18.b8420180.js"><link rel="prefetch" href="/assets/js/19.68833a5a.js"><link rel="prefetch" href="/assets/js/20.9ea51fc7.js"><link rel="prefetch" href="/assets/js/21.95c00611.js"><link rel="prefetch" href="/assets/js/22.dd92ff06.js"><link rel="prefetch" href="/assets/js/23.2bd9a697.js"><link rel="prefetch" href="/assets/js/24.ad10cd8a.js"><link rel="prefetch" href="/assets/js/25.4c426cc3.js"><link rel="prefetch" href="/assets/js/26.8053fe93.js"><link rel="prefetch" href="/assets/js/27.08117d5b.js"><link rel="prefetch" href="/assets/js/28.05875278.js"><link rel="prefetch" href="/assets/js/29.313a54f2.js"><link rel="prefetch" href="/assets/js/3.000b4b9e.js"><link rel="prefetch" href="/assets/js/30.39490ef8.js"><link rel="prefetch" href="/assets/js/31.7372076f.js"><link rel="prefetch" href="/assets/js/32.b71c774a.js"><link rel="prefetch" href="/assets/js/33.7eaf50e3.js"><link rel="prefetch" href="/assets/js/34.c644c759.js"><link rel="prefetch" href="/assets/js/35.9a365bb0.js"><link rel="prefetch" href="/assets/js/36.3440fc56.js"><link rel="prefetch" href="/assets/js/37.bff60467.js"><link rel="prefetch" href="/assets/js/38.2469e2d6.js"><link rel="prefetch" href="/assets/js/39.e08a492c.js"><link rel="prefetch" href="/assets/js/4.d9a78e4c.js"><link rel="prefetch" href="/assets/js/40.27fee081.js"><link rel="prefetch" href="/assets/js/41.f64a4cb9.js"><link rel="prefetch" href="/assets/js/42.1c7cffe4.js"><link rel="prefetch" href="/assets/js/43.7a369bda.js"><link rel="prefetch" href="/assets/js/44.65288a4d.js"><link rel="prefetch" href="/assets/js/45.215b6f75.js"><link rel="prefetch" href="/assets/js/46.48b5aabd.js"><link rel="prefetch" href="/assets/js/47.89a2b93c.js"><link rel="prefetch" href="/assets/js/48.8877653a.js"><link rel="prefetch" href="/assets/js/49.62b05ecd.js"><link rel="prefetch" href="/assets/js/5.85a4d6eb.js"><link rel="prefetch" href="/assets/js/50.2329461d.js"><link rel="prefetch" href="/assets/js/51.a97ae942.js"><link rel="prefetch" href="/assets/js/52.5214468a.js"><link rel="prefetch" href="/assets/js/53.d148d5de.js"><link rel="prefetch" href="/assets/js/6.c7fedc72.js"><link rel="prefetch" href="/assets/js/7.15fc775b.js"><link rel="prefetch" href="/assets/js/8.e04d4580.js"><link rel="prefetch" href="/assets/js/9.c39bdc59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7cfabf05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Violet</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tools</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>build</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/build/rollup-plugin.html" class="sidebar-link">Rollup</a></li><li><a href="/build/build-with-file.html" class="sidebar-link">使用脚本文件进行打包</a></li><li><a href="/build/env-setting.html" class="sidebar-link">环境变量设置</a></li><li><a href="/build/webpack5-config.html" class="sidebar-link">webpack5 config</a></li><li><a href="/build/webpack5-plus.html" class="sidebar-link">webpack5 config plus</a></li><li><a href="/whistle/tutorial.html" aria-current="page" class="active sidebar-link">Whistle 最佳跨平台代理工具实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#功能" class="sidebar-link">功能</a></li><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#具体配置实现" class="sidebar-link">具体配置实现</a></li><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#插件-插入vconsole" class="sidebar-link">插件 - 插入vconsole</a></li><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#插件-查看请求头jwt数据" class="sidebar-link">插件 - 查看请求头jwt数据</a></li><li class="sidebar-sub-header"><a href="/whistle/tutorial.html#使用本地规则文件" class="sidebar-link">使用本地规则文件</a></li></ul></li><li><a href="/build/insert-content-html-plugin.html" class="sidebar-link">insert-content-html-plugin 插件</a></li><li><a href="/build/vite-plugin-html-insert.html" class="sidebar-link">vie-plugin-html-insert</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue reactive</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vuex</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue-router</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mac</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="whistle-最佳跨平台代理工具实践"><a href="#whistle-最佳跨平台代理工具实践" class="header-anchor">#</a> Whistle 最佳跨平台代理工具实践</h1> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://github.com/avwo/whistle" target="_blank" rel="noopener noreferrer">whistle github<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://avwo.github.io/whistle/" target="_blank" rel="noopener noreferrer">whistle doc<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/whistle-plugins/examples" target="_blank" rel="noopener noreferrer">whistle plugin<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.npmjs.com/package/whistle.view-jwt" target="_blank" rel="noopener noreferrer">whistle view jwt<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="功能"><a href="#功能" class="header-anchor">#</a> 功能</h2> <p>目前在项目中使用到的功能点罗列如下，全部是在项目中实践过的</p> <ul><li>HTTP, HTTPS的接口抓包</li> <li>HTTPS接口的抓包和请求修改</li> <li>HTTPS静态资源的抓包和请求修改</li> <li>系统HOST的设置</li> <li>HTTPS请求的延迟模拟，UA的模拟，超时响应模拟等</li> <li>配置文件可基于项目同步，共享配置</li> <li>抓包文件的导出，支持JSON，方便二次查看</li> <li>请求的高亮和区分</li> <li>输出移动端页面的日志</li> <li>插件：远程调试移动页面，基于weinre</li> <li>插件：自动注入vconsole, eruda到移动端页面</li> <li>插件：查看请求头的 jwt 和响应 jwt字段，并自动解码</li> <li>插件：抓包请求自动保存文件到本地</li></ul> <h2 id="具体配置实现"><a href="#具体配置实现" class="header-anchor">#</a> 具体配置实现</h2> <h3 id="系统host的设置"><a href="#系统host的设置" class="header-anchor">#</a> 系统HOST的设置</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token number">127.0</span>.0.1 twitter.com
+<span class="token number">192.168</span>.1.1 aaabbb.com
+</code></pre></div><h3 id="https接口特殊操作"><a href="#https接口特殊操作" class="header-anchor">#</a> HTTPS接口特殊操作</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 修改返回状态码，模拟服务端报错</span>
+www.baidu.com/api/send statusCode://500 
+www.baidu.com/api/send statusCode://200
+
+<span class="token comment"># 修改响应时间，模拟响应慢的情形</span>
+www.baidu.com/api/send resDelay://2000
+
+<span class="token comment"># 修改请求速度，模拟弱网情形,单位是 kb/s</span>
+www.baidu.com/api/send reqSpeed://0.3
+
+<span class="token comment"># 修改响应内容类型</span>
+www.baidu.com/api/a reqType://text
+
+<span class="token comment"># 修改请求参数</span>
+www.baidu.com/api/a urlParams://<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 修改请求方法</span>
+www.baidu.com/api/a method://put
+
+<span class="token comment"># 修改refer, 调试refer</span>
+www.baidu.com/api/a refer://url
+
+<span class="token comment"># 修改ua, 模拟不同设备</span>
+www.baidu.com/api/a refer://url
+
+<span class="token comment"># 禁用缓存,防止资源返回 304，如html页面</span>
+www.baidu.com/api/a disable://cache
+
+<span class="token comment"># 修改 cookie</span>
+www.baidu.com/api/a reqCookies://<span class="token punctuation">{</span>a.json<span class="token punctuation">}</span>
+
+<span class="token comment"># 修改 请求头</span>
+www.baidu.com/api/a reqCookies://<span class="token punctuation">{</span>a.json<span class="token punctuation">}</span>
+
+<span class="token comment"># 篡改响应内容</span>
+www.baidu.com/api/a resBody://<span class="token punctuation">{</span>mock.json<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="静态资源修改"><a href="#静态资源修改" class="header-anchor">#</a> 静态资源修改</h3> <p>prepend.js 示例</p> <div class="language-js extra-class"><pre class="language-js"><code>window<span class="token punctuation">.</span><span class="token function-variable function">deepClone</span> <span class="token operator">=</span> <span class="token parameter">obj</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">logger</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> window<span class="token punctuation">.</span><span class="token function">deepClone</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+window<span class="token punctuation">.</span><span class="token function-variable function">pretty</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> indent <span class="token operator">=</span> <span class="token number">4</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> indent<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># html页面最前面添加 JS</span>
+www.baidu.com/a.html jsPrepend://<span class="token punctuation">{</span>prepend.js<span class="token punctuation">}</span>
+
+<span class="token comment"># html页面最后面添加 JS</span>
+www.baidu.com/a.html jsAppend://<span class="token punctuation">{</span>append.js<span class="token punctuation">}</span>
+
+<span class="token comment"># 页面转发</span>
+qq.com/foo.html qq.com/bar.html
+qq.com/path/ http://localhost:8080
+
+<span class="token comment"># 页面302跳转</span>
+qq.com/pageA redirect://qq.com/pageB
+^**qq.com/longPath/**?key<span class="token operator">=</span>** redirect://http://localhost:8080/<span class="token variable">$2</span>?key<span class="token operator">=</span><span class="token variable">$3</span>
+
+<span class="token comment"># 资源替换</span>
+**/assets/js/vendor.js http://localhost:8090/vendor.js
+**/assets/js/vendor.js.map http://localhost:8090/vendor.js.map
+
+<span class="token comment"># 复杂路径替换</span>
+^**.domain.com/static/**/**/** /local/tpl/src/<span class="token variable">$2</span>/static/<span class="token variable">$3</span>/<span class="token variable">$4</span>
+
+
+</code></pre></div><h3 id="高亮抓包请求"><a href="#高亮抓包请求" class="header-anchor">#</a> 高亮抓包请求</h3> <p>使用 <code>style://</code> 规则</p> <div class="language-sh extra-class"><pre class="language-sh"><code>**.baidu.com style://color<span class="token operator">=</span>@fff<span class="token operator">&amp;</span><span class="token assign-left variable">fontStyle</span><span class="token operator">=</span>italic<span class="token operator">&amp;</span><span class="token assign-left variable">bgColor</span><span class="token operator">=</span>@eee
+**.qq.com/game_**/**.html style://color<span class="token operator">=</span>@fff<span class="token operator">&amp;</span><span class="token assign-left variable">bgColor</span><span class="token operator">=</span>@b199f9
+*/api style://color<span class="token operator">=</span>@fff<span class="token operator">&amp;</span><span class="token assign-left variable">bgColor</span><span class="token operator">=</span>@69f
+</code></pre></div><h3 id="移动端远程调试"><a href="#移动端远程调试" class="header-anchor">#</a> 移动端远程调试</h3> <div class="language-sh extra-class"><pre class="language-sh"><code>qq.com weinre://
+**.qq.com weinre://qq
+
+<span class="token comment"># 打印日志到whsitle</span>
+
+/page/a.html log://
+/page/a.html log://specifiedPanel
+</code></pre></div><h2 id="插件-插入vconsole"><a href="#插件-插入vconsole" class="header-anchor">#</a> 插件 - 插入vconsole</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># vconsole</span>
+m.weibo.cn whistle.inspect://
+
+<span class="token comment"># eruda</span>
+m.weibo.cn whistle.inspect://eruda
+
+^**domain.com/**/**.html whistle.inspect://eruda
+</code></pre></div><h2 id="插件-查看请求头jwt数据"><a href="#插件-查看请求头jwt数据" class="header-anchor">#</a> 插件 - 查看请求头jwt数据</h2> <p><a href="https://www.npmjs.com/package/whistle.view-jwt" target="_blank" rel="noopener noreferrer">地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>基于 <a href="https://github.com/whistle-plugins/examples" target="_blank" rel="noopener noreferrer">whistle.view-md5<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>修改，简化了下，都是在页面上输入需要获取的数据，然后内部起了个 node 服务，来处理并返回数据，最终呈现在页面上展示</p> <h2 id="使用本地规则文件"><a href="#使用本地规则文件" class="header-anchor">#</a> 使用本地规则文件</h2> <ol><li><p>新建个 <a href="http://wproxy.org/whistle/cli.html" target="_blank" rel="noopener noreferrer">whistle代理文件<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <code>.whistle.js</code>，与 package.json同级</p></li> <li><p>里面填充规则，示例如下：</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> pkg <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./package.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token parameter">file</span> <span class="token operator">=&gt;</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> defaultRules <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+
+# =============== Highlight ============
+*/game style://color=@fff&amp;bgColor=@69f
+
+# =============== LOG =================
+# log
+**domain.com/foo/ log://tpl
+**domain.com/bar/ log://tpl
+
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> gameRules <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+
+# =============  HTML ================
+# prod &amp;&amp; dev
+**qq.com/path http://localhost:8080
+**aaaa.com/path http://localhost:8080
+
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+exports<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">local_rule_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pkg<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span>rules <span class="token operator">=</span> <span class="token punctuation">[</span>defaultRules<span class="token punctuation">,</span> gameRules<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><ol start="3"><li>全局后台启动代理服务：<code>w2 start</code></li> <li>使用该文件（重名则覆盖）：<code>w2 add --force</code></li></ol></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新于:</span> <span class="time">6/21/2022, 2:08:40 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/build/webpack5-plus.html" class="prev">
+        webpack5 config plus
+      </a></span> <span class="next"><a href="/build/insert-content-html-plugin.html">
+        insert-content-html-plugin 插件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8dc5394b.js" defer></script><script src="/assets/js/2.54a75a60.js" defer></script><script src="/assets/js/54.2f651a14.js" defer></script>
+  </body>
+</html>

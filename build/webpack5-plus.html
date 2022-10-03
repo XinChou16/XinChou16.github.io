@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack5 config plus | Violet</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.7cfabf05.css" as="style"><link rel="preload" href="/assets/js/app.8dc5394b.js" as="script"><link rel="preload" href="/assets/js/2.54a75a60.js" as="script"><link rel="preload" href="/assets/js/15.156a70f8.js" as="script"><link rel="prefetch" href="/assets/js/10.60060246.js"><link rel="prefetch" href="/assets/js/11.ed41270b.js"><link rel="prefetch" href="/assets/js/12.2096ad63.js"><link rel="prefetch" href="/assets/js/13.5e69c974.js"><link rel="prefetch" href="/assets/js/14.01f51ee3.js"><link rel="prefetch" href="/assets/js/16.0cacaae3.js"><link rel="prefetch" href="/assets/js/17.6c1cd472.js"><link rel="prefetch" href="/assets/js/18.b8420180.js"><link rel="prefetch" href="/assets/js/19.68833a5a.js"><link rel="prefetch" href="/assets/js/20.9ea51fc7.js"><link rel="prefetch" href="/assets/js/21.95c00611.js"><link rel="prefetch" href="/assets/js/22.dd92ff06.js"><link rel="prefetch" href="/assets/js/23.2bd9a697.js"><link rel="prefetch" href="/assets/js/24.ad10cd8a.js"><link rel="prefetch" href="/assets/js/25.4c426cc3.js"><link rel="prefetch" href="/assets/js/26.8053fe93.js"><link rel="prefetch" href="/assets/js/27.08117d5b.js"><link rel="prefetch" href="/assets/js/28.05875278.js"><link rel="prefetch" href="/assets/js/29.313a54f2.js"><link rel="prefetch" href="/assets/js/3.000b4b9e.js"><link rel="prefetch" href="/assets/js/30.39490ef8.js"><link rel="prefetch" href="/assets/js/31.7372076f.js"><link rel="prefetch" href="/assets/js/32.b71c774a.js"><link rel="prefetch" href="/assets/js/33.7eaf50e3.js"><link rel="prefetch" href="/assets/js/34.c644c759.js"><link rel="prefetch" href="/assets/js/35.9a365bb0.js"><link rel="prefetch" href="/assets/js/36.3440fc56.js"><link rel="prefetch" href="/assets/js/37.bff60467.js"><link rel="prefetch" href="/assets/js/38.2469e2d6.js"><link rel="prefetch" href="/assets/js/39.e08a492c.js"><link rel="prefetch" href="/assets/js/4.d9a78e4c.js"><link rel="prefetch" href="/assets/js/40.27fee081.js"><link rel="prefetch" href="/assets/js/41.f64a4cb9.js"><link rel="prefetch" href="/assets/js/42.1c7cffe4.js"><link rel="prefetch" href="/assets/js/43.7a369bda.js"><link rel="prefetch" href="/assets/js/44.65288a4d.js"><link rel="prefetch" href="/assets/js/45.215b6f75.js"><link rel="prefetch" href="/assets/js/46.48b5aabd.js"><link rel="prefetch" href="/assets/js/47.89a2b93c.js"><link rel="prefetch" href="/assets/js/48.8877653a.js"><link rel="prefetch" href="/assets/js/49.62b05ecd.js"><link rel="prefetch" href="/assets/js/5.85a4d6eb.js"><link rel="prefetch" href="/assets/js/50.2329461d.js"><link rel="prefetch" href="/assets/js/51.a97ae942.js"><link rel="prefetch" href="/assets/js/52.5214468a.js"><link rel="prefetch" href="/assets/js/53.d148d5de.js"><link rel="prefetch" href="/assets/js/54.2f651a14.js"><link rel="prefetch" href="/assets/js/6.c7fedc72.js"><link rel="prefetch" href="/assets/js/7.15fc775b.js"><link rel="prefetch" href="/assets/js/8.e04d4580.js"><link rel="prefetch" href="/assets/js/9.c39bdc59.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7cfabf05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Violet</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Tools</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>build</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/build/rollup-plugin.html" class="sidebar-link">Rollup</a></li><li><a href="/build/build-with-file.html" class="sidebar-link">使用脚本文件进行打包</a></li><li><a href="/build/env-setting.html" class="sidebar-link">环境变量设置</a></li><li><a href="/build/webpack5-config.html" class="sidebar-link">webpack5 config</a></li><li><a href="/build/webpack5-plus.html" aria-current="page" class="active sidebar-link">webpack5 config plus</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#reference" class="sidebar-link">reference</a></li><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#skip-parse" class="sidebar-link">skip parse</a></li><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#esm-pkg-version-alias" class="sidebar-link">esm pkg version alias</a></li><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#splitchunks" class="sidebar-link">splitChunks</a></li><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#enhance-html-webpack-plugin" class="sidebar-link">enhance html-webpack-plugin</a></li><li class="sidebar-sub-header"><a href="/build/webpack5-plus.html#enhance-copy-webpack-plugin" class="sidebar-link">enhance copy-webpack-plugin</a></li></ul></li><li><a href="/whistle/tutorial.html" class="sidebar-link">Whistle 最佳跨平台代理工具实践</a></li><li><a href="/build/insert-content-html-plugin.html" class="sidebar-link">insert-content-html-plugin 插件</a></li><li><a href="/build/vite-plugin-html-insert.html" class="sidebar-link">vie-plugin-html-insert</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue reactive</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vuex</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue-router</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mac</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack5-config-plus"><a href="#webpack5-config-plus" class="header-anchor">#</a> webpack5 config plus</h1> <h2 id="reference"><a href="#reference" class="header-anchor">#</a> reference</h2> <ul><li><a href="https://github.com/facebook/create-react-app/blob/v5.0.0/packages/react-scripts/config/webpack.config.js" target="_blank" rel="noopener noreferrer">create-react-app@5.0.0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/vuejs/vue-cli/blob/v5.0.0-rc.1/packages/%40vue/cli-service/lib/config/base.js" target="_blank" rel="noopener noreferrer">vue-cli@5.0.0<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="skip-parse"><a href="#skip-parse" class="header-anchor">#</a> skip parse</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    module<span class="token operator">:</span> <span class="token punctuation">{</span>
+        noParse<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(vue|vue-router|vuex|vuex-router-sync)$</span><span class="token regex-delimiter">/</span></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="esm-pkg-version-alias"><a href="#esm-pkg-version-alias" class="header-anchor">#</a> esm pkg version alias</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+        alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">// vue2</span>
+            <span class="token string">'vue$'</span><span class="token operator">:</span> <span class="token string">'vue/dist/vue.esm.js'</span><span class="token punctuation">,</span>
+            <span class="token comment">// vue2 runtime</span>
+            <span class="token string">'vue$'</span><span class="token operator">:</span> <span class="token string">'vue/dist/vue.runtime.esm.js'</span><span class="token punctuation">,</span>
+            <span class="token comment">// vue3</span>
+            <span class="token string">'vue$'</span><span class="token operator">:</span> <span class="token string">'vue/dist/vue.esm-bundler.js'</span><span class="token punctuation">,</span>
+            <span class="token comment">// vue3 runtime</span>
+            <span class="token string">'vue$'</span><span class="token operator">:</span> 'vue<span class="token operator">/</span>dist<span class="token operator">/</span>vu<span class="token punctuation">.</span>runtime<span class="token punctuation">.</span>esm<span class="token operator">-</span>bundler<span class="token punctuation">.</span>js<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="splitchunks"><a href="#splitchunks" class="header-anchor">#</a> splitChunks</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+        splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+            cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+                defaultVendors<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    name<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">chunk-vendors</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+                    test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[\\/]node_modules[\\/]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+                    priority<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>
+                    chunks<span class="token operator">:</span> <span class="token string">'initial'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                common<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    name<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">chunk-common</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+                    minChunks<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                    priority<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+                    chunks<span class="token operator">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
+                    reuseExistingChunk<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="enhance-html-webpack-plugin"><a href="#enhance-html-webpack-plugin" class="header-anchor">#</a> enhance html-webpack-plugin</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            template<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            title<span class="token operator">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span>
+            scriptLoading<span class="token operator">:</span> <span class="token string">'defer'</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">templateParameters</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">compilation<span class="token punctuation">,</span> assets<span class="token punctuation">,</span> assetTags<span class="token punctuation">,</span> pluginOptions</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token comment">// enhance html-webpack-plugin's built in template params</span>
+                <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    compilation<span class="token operator">:</span> compilation<span class="token punctuation">,</span>
+                    webpackConfig<span class="token operator">:</span> compilation<span class="token punctuation">.</span>options<span class="token punctuation">,</span>
+                    htmlWebpackPlugin<span class="token operator">:</span> <span class="token punctuation">{</span>
+                        tags<span class="token operator">:</span> assetTags<span class="token punctuation">,</span>
+                        files<span class="token operator">:</span> assets<span class="token punctuation">,</span>
+                        options<span class="token operator">:</span> pluginOptions
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">resolveClientEnv</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* raw */</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="enhance-copy-webpack-plugin"><a href="#enhance-copy-webpack-plugin" class="header-anchor">#</a> enhance copy-webpack-plugin</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">CopyWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            patterns<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                <span class="token keyword">from</span><span class="token operator">:</span> publicDir<span class="token punctuation">,</span>
+                to<span class="token operator">:</span> outputDir<span class="token punctuation">,</span>
+                toType<span class="token operator">:</span> <span class="token string">'dir'</span><span class="token punctuation">,</span>
+                noErrorOnMissing<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                globOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    ignore<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'**/.*'</span><span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                info<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    minimized<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新于:</span> <span class="time">12/21/2021, 3:53:23 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/build/webpack5-config.html" class="prev">
+        webpack5 config
+      </a></span> <span class="next"><a href="/whistle/tutorial.html">
+        Whistle 最佳跨平台代理工具实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8dc5394b.js" defer></script><script src="/assets/js/2.54a75a60.js" defer></script><script src="/assets/js/15.156a70f8.js" defer></script>
+  </body>
+</html>
